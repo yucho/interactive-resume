@@ -9,9 +9,10 @@ Traditional pdf resume and portfolio websites are great. But as a full-stack dev
 
 ### Functionality and MVP Features
 Create slides that showcases:
-- 3D rendering technique
-- Complex algorithmic ability
-- UX/UI design skills
+- 3D rendering
+- Complex algorithm
+- UX/UI designing
+- Data visualization
 
 ### Architecture and Technologies
 - HTML Canvas & JavaScript
