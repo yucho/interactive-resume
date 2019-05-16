@@ -5,8 +5,10 @@
   "description": "Telling by showing the skills and experience",
   "main": "src/index.js",
   "scripts": {
-    "server": "webpack --watch --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node src/server.js",
+    "webpack": "webpack --watch --mode=development"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
     "eslint": "^5.16.0",
     "eslint-config-google": "^0.13.0",
     "eslint-loader": "^2.1.2",
+    "express": "^4.16.4",
     "postcss": "^7.0.16",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
