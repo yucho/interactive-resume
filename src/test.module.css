@@ -1,5 +1,5 @@
-.classA {
-  transform: translate(100, 100);
+.classA:hover {
+  transform: translate(100px, 100px);
   transition: all ease-in-out 1s;
 }
 
@@ -12,6 +12,7 @@
 }
 
 .composed {
+  composes: classA;
   composes: classB;
   composes: classC;
 }
