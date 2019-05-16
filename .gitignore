@@ -1,3 +1,6 @@
+# Ignore build files
+/dist
+
 # OS X garbage
 .DS_Store
 
