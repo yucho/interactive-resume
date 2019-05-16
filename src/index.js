@@ -1,9 +1,16 @@
-// Test webpack here
-import * as styles from './test.module.css';
+import * as styles from './index.module.css';
+import * as util from './util';
 
-document.addEventListener('DOMContentLoaded', () => {
+const InteractiveResume = (config) => {
+  InteractiveResume.config = Object.assign(InteractiveResume.config, config);
+  return InteractiveResume;
+};
+
+InteractiveResume.config = {someFieldValue: true};
+
+InteractiveResume.start = () => {
   const div = document.createElement('div');
-  div.innerText = 'Testing webpack!';
-  div.className= styles.composed;
+  util.addClasses(div, styles.container);
   document.body.appendChild(div);
-});
+};
+window.InteractiveResume = InteractiveResume;

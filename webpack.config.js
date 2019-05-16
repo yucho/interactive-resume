@@ -13,10 +13,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
-              "env"
+              '@babel/preset-env'
             ]
           }
         }
@@ -24,18 +24,18 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             query: {
               modules: true,
               localIdentName: '[name]__[local]___[hash:base64:5]'
             }
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
-              ident: "postcss",
+              ident: 'postcss',
               plugins: (loader) => [require('postcss-import')(), require('postcss-cssnext')(), require('cssnano')()]
             }
           }
