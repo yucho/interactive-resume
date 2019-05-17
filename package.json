@@ -5,6 +5,8 @@
   "description": "Telling by showing the skills and experience",
   "main": "src/index.js",
   "scripts": {
+    "build": "webpack",
+    "deploy": "node src/deploy.js",
     "eslint": "eslint src",
     "fix": "eslint src --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -40,6 +42,7 @@
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
+    "tmp": "^0.1.0",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   },
