@@ -2,10 +2,14 @@ const path = require('path');
 const root = (...paths) => path.resolve(__dirname, ...paths);
 
 module.exports = {
+  mode: 'production',
   entry: root('src', 'index.js'),
   output: {
     path: root('dist'),
-    filename: 'interactive-resume.js'
+    filename: 'interactive-resume.js',
+    library: 'InteractiveResume',
+    libraryTarget: 'window',
+    libraryExport: 'default'
   },
   module: {
     rules: [
