@@ -5,10 +5,12 @@
   "description": "Telling by showing the skills and experience",
   "main": "src/index.js",
   "scripts": {
+    "build": "webpack",
+    "deploy": "node src/dev/deploy.js",
     "eslint": "eslint src",
     "fix": "eslint src --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node src/server.js",
+    "server": "node src/dev/server.js",
     "webpack": "webpack --watch --mode=development"
   },
   "repository": {

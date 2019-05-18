@@ -1,14 +1,13 @@
 /**
  * Copy files from src to dest
  */
-const path = require('path');
 const fs = require('fs');
-const paths = (...file) => path.resolve(__dirname, ...file);
-fs.copyFileSync(paths('index.html'), paths('..', 'dist', 'index.html'),
+const path = (...subpaths) => require('path').resolve(...subpaths);
+fs.copyFileSync(path('src', 'index.html'), path('dist', 'index.html'),
     (err) => {
       if (err) throw err;
 
-      console.log('index.html copied to dist');
+      console.log('src/index.html copied to dist');
     }
 );
 
@@ -16,7 +15,7 @@ fs.copyFileSync(paths('index.html'), paths('..', 'dist', 'index.html'),
 /**
  * Hot reload (no auto refresh)
  */
-const watcher = require('chokidar').watch(paths('..', 'dist'));
+const watcher = require('chokidar').watch(path('dist'));
 watcher.on('ready', () => {
   watcher.on('all', () => {
     console.log('File change detected! Clearing module cache from server');
@@ -32,7 +31,7 @@ watcher.on('ready', () => {
  */
 const express = require('express');
 const app = express();
-app.use(express.static(paths('..', 'dist')));
+app.use(express.static(path('dist')));
 
 const port = 8080;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
