@@ -1,5 +1,5 @@
 ## interactive-resume
-Telling by showing the skills and experience
+Telling by showing the skills and experience. [Live Demo](https://yuchoho.com/resume/)
 
 ### Background and Overview
 #### Motivation for project
@@ -21,8 +21,8 @@ Create slides that showcases:
 
 ### Implementation Timeline
 #### Day 1
-- [ ] Proposal
-- [ ] Learn stacks
+- [x] Proposal
+- [x] Learn stacks
 
 #### Day 2
 - [ ] Splash screen

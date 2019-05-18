@@ -16,4 +16,4 @@ InteractiveResume.start = () => {
   createTornado(div);
 };
 
-window.InteractiveResume = InteractiveResume;
+export default InteractiveResume;
