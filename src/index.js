@@ -1,6 +1,6 @@
-import * as styles from './index.module.css';
+import * as styles from './css/styles.module.css';
 import * as util from './util.js';
-import {createTornado} from './slide-tornado.js';
+import {createTornado} from './slides/slide-tornado.js';
 
 const InteractiveResume = (config) => {
   InteractiveResume.config = Object.assign(InteractiveResume.config, config);
