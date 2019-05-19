@@ -11,6 +11,9 @@ module.exports = {
     libraryTarget: 'window',
     libraryExport: 'default'
   },
+  externals: {
+    THREE: 'THREE'
+  },
   module: {
     rules: [
       {

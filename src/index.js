@@ -1,19 +1,28 @@
-import * as styles from './css/styles.module.css';
-import * as util from './util.js';
-import {createTornado} from './slides/slide-tornado.js';
+import * as resume from './resume.js';
 
 const InteractiveResume = (config) => {
   InteractiveResume.config = Object.assign(InteractiveResume.config, config);
   return InteractiveResume;
 };
 
-InteractiveResume.config = {someFieldValue: true};
+InteractiveResume.config = {
+  slides: [
+    'tornado'
+  ],
+  transitionQueue: true,
+  transitionQueueMax: 3,
+  transitionRecovery: 80,
+  transitionTime: 200,
+  transitionPauseBetweenQueue: 100
+};
+
+resume.initialize();
 
 InteractiveResume.start = () => {
-  const div = document.createElement('div');
-  util.addClasses(div, styles.container);
-  document.body.appendChild(div);
-  createTornado(div);
+  const {config} = InteractiveResume;
+  resume.fadeInContainer();
+  resume.instantiateSlides(config);
+  resume.render(Date.now());
 };
 
 export default InteractiveResume;

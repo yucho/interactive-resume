@@ -2,14 +2,18 @@
  * Copy files from src to dest
  */
 const fs = require('fs');
-const path = (...subpaths) => require('path').resolve(...subpaths);
-fs.copyFileSync(path('src', 'index.html'), path('dist', 'index.html'),
+const _p = require('path');
+const path = (...subpaths) => _p.resolve(...subpaths);
+const copy = (src, dest) => {
+  fs.copyFileSync(path(...src), path(...dest),
     (err) => {
       if (err) throw err;
 
-      console.log('src/index.html copied to dist');
+      console.log(`${_p.join(src)} copied to ${_p.join(dest)}`);
     }
-);
+)};
+copy(['src', 'index.html'], ['dist', 'index.html']);
+copy(['node_modules', 'three', 'build', 'three.js'], ['dist', 'three.js']);
 
 
 /**
