@@ -22,7 +22,7 @@ InteractiveResume.start = () => {
   const {config} = InteractiveResume;
   resume.fadeInContainer();
   resume.instantiateSlides(config);
-  resume.render(Date.now());
+  resume.render();
 };
 
 export default InteractiveResume;

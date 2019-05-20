@@ -54,7 +54,7 @@ export const fadeOutContainer = () => {
 
 };
 
-export const render = (now) => {
+export const render = (now = 0) => {
   data.requestId = requestAnimationFrame(render);
   setCurrentRenderCycle(now);
 
@@ -135,7 +135,7 @@ export const switchSlide = (next) => {
 
 const normalizeFrame = (now) => {
   let delta = now - data.previousFrameStamp;
-  return delta > 100 ? 100 : delta;
+  return delta < 0 ? 0 : delta > 100 ? 100 : delta;
 };
 
 const calculateTransitionViewports = () => {
