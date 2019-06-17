@@ -22,18 +22,16 @@ Create slides that showcases:
 
 ### Implementation Timeline
 #### Day 1
-- [x] Proposal
-- [x] Learn stacks
+- [ ] Implement swipe/scroll control to switch to next slide (page)
 
 #### Day 2
-- [x] Splash screen
-- [x] Slide 1
+- [ ] Display moving texts that contains my technical skills
 
 #### Day 3
-- [ ] Slide 2
+- [ ] Display pretty particles that flies across the screen using trig function
 
 #### Day 4
-- [ ] Slide 3
+- [ ] Brainstorm artsy objects that are simple enough to implement
 
 #### Day 5
-- [ ] Slide 4
+- [ ] Implement that artsy object
