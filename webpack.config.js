@@ -6,8 +6,8 @@ module.exports = {
   entry: root('src', 'index.js'),
   output: {
     path: root('dist'),
-    filename: 'interactive-resume.js',
-    library: 'InteractiveResume',
+    filename: 'interactive.js',
+    library: 'Interactive',
     libraryTarget: 'window',
     libraryExport: 'default'
   },

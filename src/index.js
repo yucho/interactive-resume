@@ -1,11 +1,11 @@
-import * as resume from './resume.js';
+import * as interactive from './interactive.js';
 
-const InteractiveResume = (config) => {
-  InteractiveResume.config = Object.assign(InteractiveResume.config, config);
-  return InteractiveResume;
+const Interactive = (config) => {
+  Interactive.config = Object.assign(Interactive.config, config);
+  return Interactive;
 };
 
-InteractiveResume.config = {
+Interactive.config = {
   slides: [
     'tornado'
   ],
@@ -16,13 +16,13 @@ InteractiveResume.config = {
   transitionPauseBetweenQueue: 100
 };
 
-resume.initialize();
+interactive.initialize();
 
-InteractiveResume.start = () => {
-  const {config} = InteractiveResume;
-  resume.fadeInContainer();
-  resume.instantiateSlides(config);
-  resume.render();
+Interactive.start = () => {
+  const {config} = Interactive;
+  interactive.fadeInContainer();
+  interactive.instantiateSlides(config);
+  interactive.render();
 };
 
-export default InteractiveResume;
+export default Interactive;

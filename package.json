@@ -1,8 +1,8 @@
 {
-  "name": "interactive-resume",
+  "name": "interactive",
   "version": "1.0.0",
   "private": true,
-  "description": "Telling by showing the skills and experience",
+  "description": "Playground for 3D design and data visualization",
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yucho/interactive-resume.git"
+    "url": "git+https://github.com/yucho/interactive.git"
   },
   "author": "Yucho Ho <yucho.ho@gmail.com> (https://yuchoho.com)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/yucho/interactive-resume/issues"
+    "url": "https://github.com/yucho/interactive/issues"
   },
-  "homepage": "https://github.com/yucho/interactive-resume#readme",
+  "homepage": "https://github.com/yucho/interactive#readme",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",

@@ -1,5 +1,5 @@
-## interactive-resume
-Telling by showing the skills and experience. [Live Demo](https://yuchoho.com/resume/)
+## interactive
+Playground for 3D designs and data visualization. [Live Demo](https://yuchoho.com/interactive/)
 
 ### Background and Overview
 #### Motivation for project
@@ -19,19 +19,3 @@ Create slides that showcases:
 - HTML Canvas & JavaScript
 - WebGL / Three.js
 - D3.js
-
-### Implementation Timeline
-#### Day 1
-- [ ] Implement swipe/scroll control to switch to next slide (page)
-
-#### Day 2
-- [ ] Display moving texts that contains my technical skills
-
-#### Day 3
-- [ ] Display pretty particles that flies across the screen using trig function
-
-#### Day 4
-- [ ] Brainstorm artsy objects that are simple enough to implement
-
-#### Day 5
-- [ ] Implement that artsy object
