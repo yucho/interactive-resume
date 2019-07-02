@@ -6,11 +6,11 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
-    "deploy": "node src/dev/deploy.js",
+    "deploy": "node lib/deploy.js",
     "eslint": "eslint src",
     "fix": "eslint src --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node src/dev/server.js",
+    "server": "node lib/server.js",
     "webpack": "webpack --watch --mode=development"
   },
   "repository": {
