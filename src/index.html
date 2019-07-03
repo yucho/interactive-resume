@@ -12,9 +12,23 @@
   <script>
     window.addEventListener('load', function() {
       const interactive = new Interactive();
-      interactive.play();
+      const button = document.querySelector('.start-button');
+      button.addEventListener('click', () => {
+        interactive.play();
+      });
+      button.innerHTML = 'Start';
     });
   </script>
+
+  <button class="start-button">Loading...</button>
+
+  <style>
+    .start-button {
+      display: block;
+      margin: 20% auto;
+      font-size: 60px;
+    }
+  </style>
 
   <script src="./three.js"></script>
   <script src="./interactive.js"></script>

@@ -1,6 +1,10 @@
+import Navigator from '../navs/navigator.js';
+
 export default class Slide {
-  constructor({ renderer }) {
-    this.renderer = renderer;
+  constructor(interactive) {
+    this.interactive = interactive;
+    this.navigator = new Navigator(this);
+    this.renderer = interactive.renderer;
     this.createScene();
     this.createCamera();
   }

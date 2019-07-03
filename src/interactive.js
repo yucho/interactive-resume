@@ -14,6 +14,7 @@ export default class Interactive {
   }
 
   play() {
+    this.updateNavigator();
     document.body.appendChild(this.container);
     this.playing = true;
     this.render();
@@ -71,12 +72,26 @@ export default class Interactive {
   next() {
     if (this.currentSlideIndex < this.slides.length - 1) {
       this.currentSlideIndex += 1;
+      this.updateNavigator();
     }
   }
 
   prev() {
     if (this.currentSlideIndex > 0) {
       this.currentSlideIndex -= 1;
+      this.updateNavigator();
+    }
+  }
+
+  updateNavigator() {
+    if (this.currentNavigator) {
+      for (const element of this.currentNavigator) {
+        this.container.removeChild(element);
+      }
+    }
+    this.currentNavigator = this.currentSlide.navigator.elements;
+    for (const element of this.currentNavigator) {
+      this.container.appendChild(element);
     }
   }
 };

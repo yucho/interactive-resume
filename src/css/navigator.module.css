@@ -1,0 +1,35 @@
+.exit {
+  composes: reset from "./styles.module.css";
+  font-size: 30px;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+  animation: popping 2s ease-in-out;
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  top: -50px;
+  right: -50px;;
+  border-radius: 50%;
+}
+
+.exit:hover {
+  font-size: 32px;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+@keyframes popping {
+  50% {
+    width: 400px;
+    height: 400px;
+    line-height: 400px;
+    top: -200px;
+    right: -200px;;
+    font-size: 60px;
+    padding: 80px;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
