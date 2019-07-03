@@ -1,11 +1,14 @@
 import * as styles from './css/styles.module.css';
-import {addClasses} from './util.js';
-import Tornado from './slides/slide-tornado';
+import { addClasses } from './util.js';
+import ControllerMain from './controllers/controller-main.js'
+import Tornado from './slides/slide-tornado.js';
+import Cube from './slides/slide-cube.js';
 
 export default class Interactive {
   constructor() {
     this.initializeWebGLRenderer();
     this.initializeSlides();
+    this.controller = new ControllerMain(this);
     this.currentSlideIndex = 0;
     this.render = this.render.bind(this);
   }
@@ -36,6 +39,7 @@ export default class Interactive {
   initializeSlides() {
     this.slides = [];
     this.slides.push(new Tornado(this));
+    this.slides.push(new Cube(this));
   }
 
   get currentViewport() {
@@ -61,6 +65,18 @@ export default class Interactive {
       const delta = timestamp - this.currentSlide.prevTimestamp;
       this.currentSlide.render(delta);
       this.currentSlide.prevTimestamp = timestamp;
+    }
+  }
+
+  next() {
+    if (this.currentSlideIndex < this.slides.length - 1) {
+      this.currentSlideIndex += 1;
+    }
+  }
+
+  prev() {
+    if (this.currentSlideIndex > 0) {
+      this.currentSlideIndex -= 1;
     }
   }
 };
