@@ -1,10 +1,5 @@
 import Slide from './slide.js';
 
-const {
-  DoubleSide, Face3, Geometry, Group, Mesh, MeshNormalMaterial, Vector3
-} = THREE;
-
-
 class SlideTornado extends Slide {
   constructor(data) {
     super(data);
@@ -26,15 +21,13 @@ class SlideTornado extends Slide {
     setTimeout(this.spawnTornado, 300 + Math.random() * 1200);
   }
 
-  render() {
-    const delta = this.data.currentRenderCycle.delta;
-    for (let i = this.tornadoes.length -1; i >= 0; i--) {
+  animate(delta) {
+    for (let i = this.tornadoes.length - 1; i >= 0; i--) {
       if (this.tornadoes[i].move(delta)) {
         this.scene.remove(this.tornadoes[i].group);
         this.tornadoes.splice(i, 1);
       } 
     }
-    this.data.renderer.render(this.scene, this.camera);
   }
 }
 
@@ -42,9 +35,9 @@ class SlideTornado extends Slide {
 class Tornado {
   constructor(scene) {
     this.scene = scene;
-    this.material = new MeshNormalMaterial();
-    this.material.side = DoubleSide;
-    this.group = new Group();
+    this.material = new THREE.MeshNormalMaterial();
+    this.material.side = THREE.DoubleSide;
+    this.group = new THREE.Group();
     this.group.position.set(-2 + Math.random() * 4, 0, -2 + Math.random() * 4);
     this.scene.add(this.group);
     this.shards = [];
@@ -86,15 +79,15 @@ class Shard {
   constructor(material) {
     this.life = 3000 + Math.random() * 2000;
     this.spin = 500 + Math.random() * 200;
-    this.geometry = new Geometry();
+    this.geometry = new THREE.Geometry();
     this.geometry.vertices = [
-      new Vector3(-0.05 * Math.random(), 0.05, 0),
-      new Vector3(0.05 * Math.random(), -0.05, 0),
-      new Vector3(0, 0.05 * Math.random() - 0.02, 0)
+      new THREE.Vector3(-0.05 * Math.random(), 0.05, 0),
+      new THREE.Vector3(0.05 * Math.random(), -0.05, 0),
+      new THREE.Vector3(0, 0.05 * Math.random() - 0.02, 0)
     ];
-    this.geometry.faces = [new Face3(0, 1, 2)];
+    this.geometry.faces = [new THREE.Face3(0, 1, 2)];
     this.geometry.computeFaceNormals();
-    this.mesh = new Mesh(this.geometry, material);
+    this.mesh = new THREE.Mesh(this.geometry, material);
   }
 
   move(delta) {
