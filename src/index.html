@@ -11,8 +11,8 @@
 <body>
   <script>
     window.addEventListener('load', function() {
-      const interactive = new Interactive();
-      const button = document.querySelector('.start-button');
+      var interactive = new Interactive();
+      var button = document.querySelector('.start-button');
       button.addEventListener('click', () => {
         interactive.play();
       });
@@ -30,8 +30,8 @@
     }
   </style>
 
-  <script src="./three.js"></script>
-  <script src="./interactive.js"></script>
+  <script defer src="./three.js"></script>
+  <script defer src="./interactive.js"></script>
 </body>
 
 </html>

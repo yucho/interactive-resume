@@ -1,11 +1,13 @@
+import { EventEmitter } from 'events';
 import * as styles from './css/styles.module.css';
 import { addClasses } from './util.js';
 import ControllerMain from './controllers/controller-main.js'
 import Tornado from './slides/slide-tornado.js';
 import Cube from './slides/slide-cube.js';
 
-export default class Interactive {
+export default class Interactive extends EventEmitter {
   constructor() {
+    super();
     this.initializeWebGLRenderer();
     this.initializeSlides();
     this.controller = new ControllerMain(this);
@@ -14,7 +16,7 @@ export default class Interactive {
   }
 
   play() {
-    this.updateNavigator();
+    this.emit('play');
     document.body.appendChild(this.container);
     this.playing = true;
     this.render();
@@ -23,6 +25,7 @@ export default class Interactive {
   pause() {
     this.playing = false;
     this.currentSlide.prevTimestamp = null;
+    this.emit('pause');
     if (document.body.contains(this.container)) {
       document.body.removeChild(this.container);
     }
@@ -71,27 +74,19 @@ export default class Interactive {
 
   next() {
     if (this.currentSlideIndex < this.slides.length - 1) {
+      this.currentSlide.emitExit();
       this.currentSlideIndex += 1;
-      this.updateNavigator();
+      this.currentSlide.emitEnter();
+      this.emit('next');
     }
   }
 
   prev() {
     if (this.currentSlideIndex > 0) {
+      this.currentSlide.emitExit();
       this.currentSlideIndex -= 1;
-      this.updateNavigator();
-    }
-  }
-
-  updateNavigator() {
-    if (this.currentNavigator) {
-      for (const element of this.currentNavigator) {
-        this.container.removeChild(element);
-      }
-    }
-    this.currentNavigator = this.currentSlide.navigator.elements;
-    for (const element of this.currentNavigator) {
-      this.container.appendChild(element);
+      this.currentSlide.emitEnter();
+      this.emit('prev');
     }
   }
 };

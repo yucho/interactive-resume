@@ -1,9 +1,11 @@
-import Navigator from '../navs/navigator.js';
+import { EventEmitter } from 'events';
+import DOMElements from './dom-elements.js';
 
-export default class Slide {
+export default class Slide extends EventEmitter {
   constructor(interactive) {
+    super();
     this.interactive = interactive;
-    this.navigator = new Navigator(this);
+    this.domElements = new DOMElements(this);
     this.renderer = interactive.renderer;
     this.createScene();
     this.createCamera();
@@ -23,5 +25,13 @@ export default class Slide {
       this.animate(delta);
     }
     this.renderer.render(this.scene, this.camera);
+  }
+
+  emitEnter() {
+    this.emit('enter');
+  }
+
+  emitExit() {
+    this.emit('exit');
   }
 };
