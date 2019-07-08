@@ -13,3 +13,8 @@
   height: 100vh;
   background: black;
 }
+
+.scrollJack {
+  height: 100%;
+  overflow: hidden;
+}

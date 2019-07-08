@@ -19,6 +19,8 @@ export default class Interactive extends EventEmitter {
     this.emit('play');
     document.body.appendChild(this.container);
     this.playing = true;
+    this.currentSlide.emitEnter();
+    enableScrollJack();
     this.render();
   }
 
@@ -29,6 +31,8 @@ export default class Interactive extends EventEmitter {
     if (document.body.contains(this.container)) {
       document.body.removeChild(this.container);
     }
+    disableScrollJack();
+    this.currentSlide.emitExit();
   }
 
   initializeWebGLRenderer() {
@@ -89,4 +93,16 @@ export default class Interactive extends EventEmitter {
       this.emit('prev');
     }
   }
+};
+
+const disableTouchScroll = (e) => e.preventDefault();
+
+const enableScrollJack = () => {
+  document.body.classList.add(styles.scrollJack);
+  document.body.addEventListener('touchmove', disableTouchScroll);
+};
+
+const disableScrollJack = () => {
+  document.body.classList.remove(styles.scrollJack);
+  document.body.removeEventListener('touchmove', disableTouchScroll);
 };
