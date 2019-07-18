@@ -2,8 +2,8 @@ import { EventEmitter } from 'events';
 import * as styles from './css/styles.module.css';
 import { addClasses } from './util.js';
 import ControllerMain from './controllers/controller-main.js'
+import Rainy from './slides/slide-rainy.js';
 import Tornado from './slides/slide-tornado.js';
-import Cube from './slides/slide-cube.js';
 
 export default class Interactive extends EventEmitter {
   constructor() {
@@ -46,8 +46,8 @@ export default class Interactive extends EventEmitter {
 
   initializeSlides() {
     this.slides = [];
+    this.slides.push(new Rainy(this));
     this.slides.push(new Tornado(this));
-    this.slides.push(new Cube(this));
   }
 
   get currentViewport() {
