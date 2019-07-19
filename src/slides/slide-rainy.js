@@ -16,7 +16,7 @@ class Rainy extends Slide {
 
   createCloud() {
     const loader = new THREE.TextureLoader();
-    loader.load('./smoke-1.png', (texture) => {
+    loader.load('./smoke.png', (texture) => {
       const plane = new THREE.PlaneBufferGeometry(300, 300);
       const material = new THREE.MeshLambertMaterial({
         map: texture,

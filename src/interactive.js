@@ -47,8 +47,8 @@ export default class Interactive extends EventEmitter {
 
   initializeSlides() {
     this.slides = [];
-    this.slides.push(new Rainy(this));
     this.slides.push(new Welcome(this));
+    this.slides.push(new Rainy(this));
     this.slides.push(new Tornado(this));
   }
 
