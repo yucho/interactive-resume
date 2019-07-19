@@ -3,6 +3,7 @@ import * as styles from './css/styles.module.css';
 import { addClasses } from './util.js';
 import ControllerMain from './controllers/controller-main.js'
 import Rainy from './slides/slide-rainy.js';
+import Welcome from './slides/slide-welcome.js';
 import Tornado from './slides/slide-tornado.js';
 
 export default class Interactive extends EventEmitter {
@@ -47,6 +48,7 @@ export default class Interactive extends EventEmitter {
   initializeSlides() {
     this.slides = [];
     this.slides.push(new Rainy(this));
+    this.slides.push(new Welcome(this));
     this.slides.push(new Tornado(this));
   }
 
