@@ -1,0 +1,16 @@
+.helvetica {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.welcome {
+  composes: helvetica;
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: 400;
+  color: #eee;
+  opacity: 1;
+}
