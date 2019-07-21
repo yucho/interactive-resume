@@ -14,3 +14,16 @@
   color: #eee;
   opacity: 1;
 }
+
+.next {
+  composes: helvetica;
+  position: absolute;
+  margin: 0 auto;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 400;
+  color: #eee;
+  opacity: 1;
+}

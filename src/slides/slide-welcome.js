@@ -17,7 +17,11 @@ class Welcome extends Slide {
     welcome.innerHTML = 'WELCOME';
     addClasses(welcome, style.welcome);
 
-    this.domElements.elements.push(welcome);
+    const next = document.createElement('h2');
+    next.innerHTML = '↓ scroll down to continue ↓';
+    addClasses(next, style.next);
+
+    this.domElements.elements.push(welcome, next);
   }
 
   onEnter() {
