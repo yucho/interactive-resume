@@ -5,6 +5,7 @@ import ControllerMain from './controllers/controller-main.js'
 import Rainy from './slides/slide-rainy.js';
 import Welcome from './slides/slide-welcome.js';
 import Tornado from './slides/slide-tornado.js';
+import Thanks from './slides/slide-thanks.js';
 
 export default class Interactive extends EventEmitter {
   constructor() {
@@ -50,6 +51,7 @@ export default class Interactive extends EventEmitter {
     this.slides.push(new Welcome(this));
     this.slides.push(new Rainy(this));
     this.slides.push(new Tornado(this));
+    this.slides.push(new Thanks(this));
   }
 
   get currentViewport() {
