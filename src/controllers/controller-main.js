@@ -36,7 +36,6 @@ export default class ControllerMain {
 
   addKeyControl() {
     const onKeydown = (e) => {
-      console.log(e.keyCode);
       if (e.isComposing || e.keyCode === 229) {
         return;
       }
