@@ -5,17 +5,11 @@ Playground for 3D designs and data visualization. [Live Demo](https://yuchoho.co
 #### Motivation for project
 Traditional pdf resume and portfolio websites are great. But as a full-stack developer, nothing speaks out more than demonstrating your skill through interactive online resume, where the recruiters can visually understand what you are capable of doing. Inspired by [Robby Leonardi](http://www.rleonardi.com/interactive-resume/) and [Valentin Marmonier](http://vaalentin.github.io/2015/).
 
-### Wireframe
-<img width="1439" alt="tornado-prototype" src="https://user-images.githubusercontent.com/9959271/58003392-85803b00-7a95-11e9-93d2-358c5e711065.png">
-
-### Functionality and MVP Features
-Create slides that showcases:
-- 3D rendering
-- Complex algorithm
-- UX/UI designing
-- Data visualization
+### Sample Animation
+<img width="1439" alt="tornado-prototype" src="https://user-images.githubusercontent.com/9959271/62847345-94d4e600-bc8a-11e9-9b81-9f31424e55f6.gif">
 
 ### Architecture and Technologies
-- HTML Canvas & JavaScript
+- HTML5, CSS3, JavaScript
 - WebGL / Three.js
+- GLSL
 - D3.js
